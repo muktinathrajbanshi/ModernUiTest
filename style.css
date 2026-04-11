@@ -95,3 +95,24 @@ nav a:hover {
   backdrop-filter: blur(10px);
   transition: 0.3s;
 }
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(56, 189, 248, 0.2);
+}
+
+/* Contact */
+.contact {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact input,
+.contact textarea {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
