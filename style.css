@@ -1,133 +1,146 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #020617, #0f172a);
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: white;
+  overflow-x: hidden;
 }
 
 /* Header */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Logo Glow */
+header h1 {
+  font-size: 22px;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nav */
 nav a {
-  margin-left: 20px;
-  color: white;
+  margin-left: 25px;
+  color: #cbd5f5;
   text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #38bdf8;
   transition: 0.3s;
 }
 
 nav a:hover {
-  color: #38bdf8;
+  color: white;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
 }
 
+/* Gradient Heading */
 .hero h2 {
-  font-size: 40px;
-  margin-bottom: 10px;
+  font-size: 48px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out;
 }
 
+.hero p {
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* Button Glow */
 .hero button {
-  margin-top: 20px;
-  padding: 12px 30px;
+  margin-top: 25px;
+  padding: 14px 35px;
   border: none;
-  background: #38bdf8;
-  color: black;
-  border-radius: 25px;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  color: white;
+  border-radius: 30px;
   cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
   transition: 0.3s;
 }
 
 .hero button:hover {
-  background: #0ea5e9;
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.9);
 }
 
 /* Skills */
 .skills {
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
 .skill {
-  margin: 20px 0;
+  margin: 25px 0;
 }
 
 .bar {
   background: #1e293b;
-  border-radius: 20px;
+  border-radius: 30px;
   overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .bar span {
   display: block;
-  height: 10px;
-  background: #38bdf8;
+  height: 12px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  box-shadow: 0 0 10px #38bdf8;
+  border-radius: 30px;
+  animation: loadBar 2s ease;
 }
 
 /* Projects */
 .projects {
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
 .card {
-  padding: 20px;
+  padding: 25px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  background: rgba(56, 189, 248, 0.2);
-}
-
-/* Contact */
-.contact {
-  padding: 50px 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.contact input,
-.contact textarea {
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-}
-
-.contact button {
-  padding: 12px;
-  border: none;
-  background: #38bdf8;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 640px) {
-  .hero h2 {
-    font-size: 28px;
-  }
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
 }
